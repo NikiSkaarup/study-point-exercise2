@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cph-ns117 - day 4</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container-fluid f-h">
+    <div class="row f-h">
+        <div class="col-xs-12 col-sm-4 col-md-4 o-s f-h p-t-1">
+            <div class="card card-block">
+                <h4 class="card-title">Student</h4>
+                <form id="studentForm" action="#">
+                    <div class="form-group" id="studentIdFormGroup"
+                         style="display: none;">
+                        <label class="sr-only" for="studentId">id</label>
+                        <p id="studentId" class="form-control-static">#1</p>
+                        <input type="hidden" name="studentId">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only"
+                               for="studentName">name</label>
+                        <input type="text" class="form-control"
+                               name="studentName" id="studentName"
+                               placeholder="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only"
+                               for="studentEmail">email</label>
+                        <input type="email" class="form-control"
+                               name="studentEmail" id="studentEmail"
+                               placeholder="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only"
+                               for="studentPhone">phone</label>
+                        <input type="tel" class="form-control"
+                               name="studentPhone" id="studentPhone"
+                               placeholder="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only"
+                               for="studentLevel">level</label>
+                        <select name="studentLevel" id="studentLevel"
+                                class="custom-select w-100"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only"
+                               for="studentGroup">group</label>
+                        <select name="studentGroup" id="studentGroup"
+                                class="custom-select w-100"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <!--<div class="btn-group" role="group" aria-label="buttons">-->
+                        <button id="studentSubmit" type="submit" class="btn btn-primary">Submit
+                        </button>
+                        <!--</div>-->
+                    </div>
+                </form>
+            </div>
+
+            <div class="card card-block">
+                <h4 class="card-title">Level</h4>
+                <form id="levelForm" action="#">
+                    <div class="form-group" id="levelIdFormGroup"
+                         style="display: none;">
+                        <label class="sr-only" for="levelId">id</label>
+                        <p id="levelId" class="form-control-static">
+                            #1</p>
+                        <input type="hidden" name="id">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only"
+                               for="levelName">name</label>
+                        <input type="text" class="form-control"
+                               name="name" id="levelName"
+                               placeholder="name">
+                    </div>
+
+                    <div class="form-group">
+                        <!--<div class="btn-group" role="group" aria-label="buttons">-->
+                        <button id="levelSubmit" type="submit" class="btn btn-primary">Submit
+                        </button>
+                        <!--</div>-->
+                    </div>
+                </form>
+            </div>
+
+            <div class="card card-block">
+                <h4 class="card-title">Group</h4>
+                <form id="groupForm" action="#">
+                    <div class="form-group" id="groupIdFormGroup"
+                         style="display: none;">
+                        <label class="sr-only" for="groupId">id</label>
+                        <p id="groupId" class="form-control-static">#1</p>
+                        <input type="hidden" name="id">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="groupName">name</label>
+                        <input type="text" class="form-control"
+                               name="name" id="groupName"
+                               placeholder="name">
+                    </div>
+
+                    <div class="form-group">
+                        <!--<div class="btn-group" role="group" aria-label="buttons">-->
+                        <button id="groupSubmit" type="submit" class="btn btn-primary">Submit
+                        </button>
+                        <!--</div>-->
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-8 o-s f-h p-t-1">
+            <h4 class="table-title">Students</h4>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover table-bordered">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th style="width: 20px;">#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Level</th>
+                        <th>Group</th>
+                        <th style="width: 69px;">
+                            <button type="button" class="btn btn-sm btn-danger"
+                                    onclick="deleteAllStudents()">Del All
+                            </button>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody id="studentsData">
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="table-title">Levels</h4>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover table-bordered">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th style="width: 20px;">#</th>
+                        <th>Name</th>
+                        <th style="width: 69px;">
+                            <!--<button type="button" class="btn btn-sm btn-danger" onclick="deleteAllCategories()">Del All</button>--></th>
+                    </tr>
+                    </thead>
+                    <tbody id="levelsData">
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="table-title">Groups</h4>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover table-bordered">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th style="width: 20px">#</th>
+                        <th>Name</th>
+                        <th style="width: 69px;">
+                            <!--<button type="button" class="btn btn-sm btn-danger" onclick="deleteAllGroups()">Del All</button>--></th>
+                    </tr>
+                    </thead>
+                    <tbody id="groupsData">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<script src="js/jquery-3.1.0.min.js"></script>-->
+<!--<script src="js/bootstrap.min.js"></script>-->
+<script src="js/simplify.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+*, *:before, *:after {
+    border-radius: 0 !important;
+    outline-width: 0 !important;
+}
+
+body {
+    background-color: #222;
+}
+
+table {
+    background-color: #fafafa;
+    color: #373a3c;
+    overflow-x: auto;
+}
+
+.table-title {
+    color: #fafafa;
+}
+
+.radio > * {
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+@media screen and (min-device-width: 1200px) {
+    html, body {
+        padding: 0 !important;
+        height: 100% !important;
+    }
+
+    .f-h {
+        height: 100% !important;
+    }
+
+    .o-s {
+        overflow-y: scroll !important;
+    }
+}
