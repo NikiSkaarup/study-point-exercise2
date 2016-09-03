@@ -8,14 +8,12 @@ body {
     background-color: #222;
 }
 
-table {
-    background-color: #fafafa;
-    color: #373a3c;
-    overflow-x: auto;
-}
-
 .table-title {
     color: #fafafa;
+}
+
+.card {
+    background-color: #eee;
 }
 
 .radio > * {
